@@ -14,7 +14,7 @@ Ansible role that installs and configures ethminer_.
 Installation
 ------------
 
-Install with ```ansible-galaxy install narfman0.ethminer``
+Install with ``ansible-galaxy install narfman0.ethminer``
 
 License
 -------
