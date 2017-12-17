@@ -1,0 +1,30 @@
+---
+- name: Create user
+  user: name={{ ethminer_user }} comment="Ethminer user"
+
+- name: Check bin existence
+  stat:
+    path: "{{ ethminer_bin }}"
+  register: stat_result
+
+- name: Download and extract bin
+  unarchive:
+    src: "{{ ethminer_package }}"
+    dest: "/home/{{ ethminer_user }}/"
+    remote_src: True
+  become_user: "{{ ethminer_user }}"
+  when: stat_result.stat.exists == False
+
+- name: Generate systemd service file
+  template: src=ethminer.service
+            dest=/lib/systemd/system/
+            owner=root
+            group=root
+            mode=640
+  notify:
+  - ethminer changed
+
+- name: enable service
+  systemd:
+    name: ethminer
+    enabled: yes

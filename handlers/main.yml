@@ -1,0 +1,7 @@
+---
+- name: ethminer changed
+  service:
+    name: ethminer
+    state: restarted
+    enabled: yes
+  become: True

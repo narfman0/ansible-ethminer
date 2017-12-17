@@ -1,0 +1,8 @@
+ethminer_user: 'ethminer'
+ethminer_bin: '/home/{{ ethminer_user }}/bin/ethminer'
+ethminer_credentials: '0x1234567890.server_identifier_example'
+ethminer_stratum: 'us1.ethermine.org:4444'
+ethminer_failover_stratum: 'us2.ethermine.org:4444'
+ethminer_cli_switch: ' -U'
+ethminer_version: '0.12.0'
+ethminer_package: 'https://github.com/ethereum-mining/ethminer/releases/download/v{{ ethminer_version }}/ethminer-{{ ethminer_version }}-Linux.tar.gz'
