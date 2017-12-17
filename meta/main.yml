@@ -5,6 +5,9 @@ galaxy_info:
   license: GPL3
   min_ansible_version: 1.9
   platforms:
+    - name: Debian
+      versions:
+        - all
     - name: Ubuntu
       versions:
         - all
