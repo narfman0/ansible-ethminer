@@ -6,7 +6,7 @@ After=network.target
 Type=simple
 User={{ ethminer_user }}
 WorkingDirectory=/home/{{ ethminer_user }}
-ExecStart={{ ethminer_bin }} {{ ethminer_cli_switch }} --farm-recheck 200 -S {{ ethminer_stratum }} -FS {{ ethminer_failover_stratum }} -O {{ ethminer_credentials }}
+ExecStart={{ ethminer_bin }} {{ ethminer_cli_switch }} {% if ethminer_report_hashrate %}-RH {% endif %}--farm-recheck 200 -S {{ ethminer_stratum }} -FS {{ ethminer_failover_stratum }} -O {{ ethminer_credentials }}
 Restart=on-abort
 
 [Install]
