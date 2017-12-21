@@ -6,4 +6,5 @@ ethminer_failover_stratum: 'us2.ethermine.org:4444'
 ethminer_cli_switch: ' -U'
 ethminer_version: '0.12.0'
 ethminer_report_hashrate: true
+ethminer_systemd_restart: 'on-failure'
 ethminer_package: 'https://github.com/ethereum-mining/ethminer/releases/download/v{{ ethminer_version }}/ethminer-{{ ethminer_version }}-Linux.tar.gz'
